@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karwaa Hospitality — Your Next Journey Starts Here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16263f;
+    --navy-2:#1e3557;
+    --gold:#c9982f;
+    --gold-dark:#a97c21;
+    --cream:#fbf6ec;
+    --cream-2:#f4ecd9;
+    --paper:#ffffff;
+    --ink:#1c2536;
+    --muted:#6b7280;
+    --line:#e7ddc6;
+    --shadow: 0 14px 34px rgba(22,38,63,0.10);
+    --radius: 14px;
+    --maxw: 1180px;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *,*::before,*::after{box-sizing:inherit;}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#0f1622;
+      --cream-2:#141d2c;
+      --paper:#182234;
+      --ink:#eef1f6;
+      --muted:#9aa5b6;
+      --line:#243349;
+      --shadow: 0 14px 34px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#0f1622;
+    --cream-2:#141d2c;
+    --paper:#182234;
+    --ink:#eef1f6;
+    --muted:#9aa5b6;
+    --line:#243349;
+    --shadow: 0 14px 34px rgba(0,0,0,0.35);
+  }
+  html{scroll-padding-top: env(safe-area-inset-top, 0px); height:100%;}
+  body{
+    height:100%;
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{ font-family:'Playfair Display', serif; margin:0; color:var(--navy); letter-spacing:.2px;}
+  :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3, :root[data-theme="dark"] h4{color:#f3e9d2;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) h1, :root:not([data-theme="light"]) h2, :root:not([data-theme="light"]) h3, :root:not([data-theme="light"]) h4{color:#f3e9d2;} }
+  p{margin:0; color:var(--muted); line-height:1.65;}
+  a{color:inherit; text-decoration:none;}
+  img,svg{max-width:100%; display:block;}
+  button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12.5px; letter-spacing:2.5px; color:var(--gold-dark); font-weight:600;
+  }
+  .eyebrow::before{content:"›"; color:var(--gold);}
+  .btn{
+    display:inline-flex; align-items:center; gap:9px; justify-content:center;
+    padding:14px 26px; border-radius:999px; border:none; font-weight:600; font-size:15px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-dark)); color:#241a08;
+    box-shadow:0 10px 22px rgba(201,152,47,.35);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 14px 28px rgba(201,152,47,.45);}
+  .btn.ghost{ background:transparent; color:var(--navy); border:1.5px solid var(--navy); box-shadow:none;}
+  :root[data-theme="dark"] .btn.ghost, .btn.ghost{color:var(--ink); border-color:var(--line);}
+  .btn.small{padding:10px 20px; font-size:13.5px;}
+  .btn svg{width:15px; height:15px;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky; top:0; z-index:1000;
+    background:rgba(251,246,236,0.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .topbar{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand .mark{
+    width:48px;height:48px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, #ffe9b8, #c9982f 60%, #7a5a12);
+    display:flex;align-items:center;justify-content:center; flex:0 0 auto;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.4);
+  }
+  .brand .mark svg{width:26px;height:26px;}
+  .brand .name{font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--navy); letter-spacing:1px;}
+  .brand .tag{font-size:10px; letter-spacing:1.5px; color:var(--muted); margin-top:-3px;}
+  nav.main-nav{display:flex; gap:30px;}
+  nav.main-nav a{font-size:14.5px; font-weight:500; color:var(--ink); position:relative; padding:6px 0;}
+  nav.main-nav a.active{color:var(--gold-dark); font-weight:600;}
+  nav.main-nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--gold);}
+  .top-actions{display:flex; align-items:center; gap:22px;}
+  .contact-chip{display:flex; align-items:center; gap:9px; font-size:13px;}
+  .contact-chip .ico{
+    width:34px;height:34px;border-radius:50%; background:var(--cream-2); display:flex;align-items:center;justify-content:center; flex:0 0 auto;
+  }
+  .contact-chip .ico svg{width:15px;height:15px; stroke:var(--gold-dark);}
+  .contact-chip b{display:block; color:var(--ink); font-weight:600;}
+  .contact-chip span{color:var(--muted); font-size:12px;}
+  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; padding:8px;}
+  .hamburger span{width:24px; height:2px; background:var(--navy); border-radius:2px;}
+
+  /* ===== PAGE MECHANICS ===== */
+  .page{display:none;}
+  .page.visible{display:block; animation:fadein .35s ease;}
+  @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+  section{padding:74px 0;}
+  .section-head{max-width:640px; margin-bottom:40px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,38px); margin-top:10px; font-weight:600;}
+  .section-head p{margin-top:12px; font-size:15.5px;}
+
+  /* ===== HERO ===== */
+  .hero{position:relative; padding:0; overflow:hidden;}
+  .hero-art{
+    position:relative; min-height:560px; display:flex; align-items:center;
+    background:
+      radial-gradient(ellipse at 78% 18%, rgba(255,224,150,.55), transparent 42%),
+      linear-gradient(180deg, #cfe6ee 0%, #a9cede 30%, #7fb0c8 55%, #4d7f9b 100%);
+  }
+  .hero-mountains{position:absolute; inset:0; z-index:0;}
+  .hero-overlay{position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,20,35,.42) 0%, rgba(10,20,35,.18) 45%, rgba(10,20,35,0) 68%);}
+  .hero-inner{position:relative; z-index:2; padding:64px 28px 96px;}
+  .hero-copy{max-width:640px;}
+  .hero-copy .eyebrow{color:#ffd98a;}
+  .hero-copy .eyebrow::before{color:#ffd98a;}
+  .hero-copy h1{color:#fff; font-size:clamp(38px,5.4vw,58px); line-height:1.08; margin-top:16px; font-weight:600;}
+  .hero-copy h1 em{
+    display:block; font-style:italic; color:#ffd98a; font-weight:500; font-family:'Playfair Display',serif;
+    font-size:1.12em; margin-top:2px;
+  }
+  .hero-copy p{color:#eef3f6; margin-top:20px; font-size:16px; max-width:480px;}
+  .search-card{
+    margin-top:34px; background:#fff; border-radius:18px; box-shadow:0 20px 44px rgba(10,20,35,.28);
+    padding:14px; display:flex; gap:8px; flex-wrap:wrap; max-width:760px;
+  }
+  .search-field{
+    flex:1 1 160px; display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px;
+  }
+  .search-field + .search-field{border-left:1px solid #ece4d0;}
+  .search-field svg{width:18px;height:18px; stroke:var(--gold-dark); flex:0 0 auto;}
+  .search-field label{display:block; font-size:11px; color:var(--muted); font-weight:600;}
+  .search-field input, .search-field select{
+    border:none; outline:none; font-family:inherit; font-size:13.5px; color:var(--ink); background:transparent; width:100%; padding:0;
+  }
+  .search-card .btn{flex:0 0 auto; align-self:center;}
+
+  /* floating hint */
+  .hero-hint{
+    position:absolute; right:34px; bottom:120px; z-index:2; color:#fff; font-family:'Playfair Display',serif; font-style:italic;
+    font-size:20px; text-align:right; opacity:.92; line-height:1.3;
+  }
+
+  /* ===== FEATURES STRIP ===== */
+  .features{background:var(--paper); border-bottom:1px solid var(--line);}
+  .features .wrap{padding:44px 28px;}
+  .feat-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:18px;}
+  .feat-item{text-align:center; padding:10px 6px;}
+  .feat-item .ico{
+    width:58px;height:58px;border-radius:50%; margin:0 auto 12px; background:var(--cream-2);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .feat-item .ico svg{width:24px;height:24px; stroke:var(--gold-dark);}
+  .feat-item h4{font-size:14.5px; font-weight:600; margin-bottom:4px;}
+  .feat-item p{font-size:12px;}
+
+  /* ===== SERVICES OVERVIEW (home) ===== */
+  .svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .svc-card{background:var(--paper); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line);}
+  .svc-photo{height:170px; position:relative;}
+  .svc-body{padding:22px 22px 26px;}
+  .svc-body h3{font-size:19px; margin-bottom:8px;}
+  .svc-body p{font-size:13.5px; margin-bottom:14px;}
+  .svc-link{font-size:13.5px; font-weight:600; color:var(--gold-dark); display:inline-flex; align-items:center; gap:6px;}
+
+  .split{display:grid; grid-template-columns:1fr 1.3fr; gap:60px; align-items:center;}
+  @media (max-width:900px){ .split{grid-template-columns:1fr;} }
+
+  /* ===== PACKAGES ===== */
+  .pkg-head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;}
+  .pkg-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:18px; margin-top:8px;}
+  .pkg-card{background:var(--paper); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); transition:transform .2s ease;}
+  .pkg-card:hover{transform:translateY(-4px);}
+  .pkg-photo{height:150px; position:relative;}
+  .pkg-price{
+    position:absolute; top:10px; right:10px; background:#fff; color:var(--navy); font-weight:700; font-size:12.5px;
+    padding:5px 10px; border-radius:999px; box-shadow:0 4px 10px rgba(0,0,0,.15);
+  }
+  .pkg-body{padding:16px 16px 18px;}
+  .pkg-body h4{font-size:15.5px; margin-bottom:6px;}
+  .pkg-meta{font-size:11.5px; color:var(--muted); display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px;}
+  .pkg-loc{font-size:12px; color:var(--muted); display:flex; align-items:center; justify-content:space-between;}
+  .pkg-loc svg{width:12px;height:12px; stroke:var(--gold-dark); margin-right:4px;}
+  .pkg-loc button{background:var(--cream-2); border:none; width:26px;height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
+  .pkg-loc button svg{width:12px;height:12px;stroke:var(--navy); margin:0;}
+
+  .filter-row{display:flex; gap:10px; flex-wrap:wrap; margin:22px 0 6px;}
+  .chip{
+    padding:8px 18px; border-radius:999px; border:1px solid var(--line); background:var(--paper); font-size:13px; font-weight:500;
+  }
+  .chip.active{background:var(--navy); color:#fff; border-color:var(--navy);}
+
+  /* ===== WHY CHOOSE / TRUST ===== */
+  .trust{background:var(--navy); color:#fff;}
+  .trust h2, .trust .eyebrow{color:#fff;}
+  .trust .eyebrow{color:#ffd98a;} .trust .eyebrow::before{color:#ffd98a;}
+  .trust p{color:#cfd8e6;}
+  .trust-grid{display:grid; grid-template-columns:1fr repeat(4,1fr); gap:20px; align-items:center;}
+  .trust-item{text-align:center;}
+  .trust-item .ico{width:56px;height:56px;border-radius:50%; margin:0 auto 12px; background:rgba(255,255,255,.09); display:flex; align-items:center; justify-content:center;}
+  .trust-item .ico svg{width:24px;height:24px; stroke:#ffd98a;}
+  .trust-item h4{color:#fff; font-size:14.5px; font-weight:600;}
+
+  /* ===== OFFER BANNER ===== */
+  .offer{
+    margin:0 auto 0; max-width:var(--maxw); padding:0 28px 74px;
+  }
+  .offer-inner{
+    border-radius:20px; padding:30px 34px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    background:linear-gradient(120deg, #16263f 0%, #2a4a71 55%, #b98a2b 130%);
+    color:#fff; box-shadow:var(--shadow);
+  }
+  .offer-left{display:flex; align-items:center; gap:18px;}
+  .offer-left .ico{width:52px;height:52px;border-radius:50%; background:rgba(255,255,255,.14); display:flex;align-items:center;justify-content:center; flex:0 0 auto;}
+  .offer-left .ico svg{width:24px;height:24px; stroke:#ffd98a;}
+  .offer-left h3{color:#fff; font-size:20px;}
+  .offer-left p{color:#e6ecf3; font-size:13.5px; margin-top:4px;}
+
+  /* ===== FOOTER ===== */
+  footer{background:#101a2b; color:#c9d2e0; padding-top:56px;}
+  .foot-top{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:30px; padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,.08);}
+  .foot-brand .brand .name{color:#fff;}
+  .foot-brand p{margin-top:14px; font-size:13px; max-width:280px;}
+  .foot-col h4{color:#fff; font-size:15px; margin-bottom:16px; font-family:'Poppins',sans-serif; font-weight:600;}
+  .foot-col a, .foot-col div{display:block; font-size:13.5px; color:#aab6c8; margin-bottom:10px;}
+  .foot-social{display:flex; gap:10px; margin-top:14px;}
+  .foot-social a{width:34px;height:34px;border-radius:50%; background:rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center;}
+  .foot-social svg{width:15px;height:15px; stroke:#fff;}
+  .foot-bottom{display:flex; justify-content:space-between; align-items:center; padding:22px 0; font-size:12.5px; color:#8592a6; flex-wrap:wrap; gap:10px;}
+  .foot-bottom a{margin-left:16px; color:#8592a6;}
+
+  /* ===== INNER PAGE HERO (shared) ===== */
+  .page-hero{
+    padding:64px 0 54px; text-align:center;
+    background:linear-gradient(180deg, var(--cream-2), var(--cream));
+    border-bottom:1px solid var(--line);
+  }
+  .page-hero .eyebrow{justify-content:center;}
+  .page-hero h1{font-size:clamp(32px,4.2vw,46px); margin-top:14px;}
+  .page-hero p{max-width:560px; margin:14px auto 0;}
+
+  /* ===== ABOUT PAGE ===== */
+  .stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:40px;}
+  .stat-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:26px 20px; text-align:center; box-shadow:var(--shadow);}
+  .stat-card b{display:block; font-family:'Playfair Display',serif; font-size:32px; color:var(--gold-dark);}
+  .stat-card span{font-size:12.5px; color:var(--muted);}
+  .value-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:20px;}
+  .value-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow);}
+  .value-card .ico{width:48px;height:48px;border-radius:12px; background:var(--cream-2); display:flex; align-items:center; justify-content:center; margin-bottom:14px;}
+  .value-card .ico svg{width:22px;height:22px;stroke:var(--gold-dark);}
+  .value-card h4{font-size:16.5px; margin-bottom:8px;}
+  .value-card p{font-size:13.5px;}
+
+  /* ===== SERVICES PAGE ===== */
+  .service-list{display:flex; flex-direction:column; gap:0;}
+  .service-row{
+    display:grid; grid-template-columns:1fr 1.15fr; gap:50px; align-items:center; padding:46px 0; border-bottom:1px solid var(--line);
+  }
+  .service-row:last-child{border-bottom:none;}
+  .service-row:nth-child(even){grid-template-columns:1.15fr 1fr;}
+  .service-row:nth-child(even) .service-photo{order:2;}
+  .service-photo{height:230px; border-radius:var(--radius); position:relative; overflow:hidden; box-shadow:var(--shadow);}
+  .service-num{font-family:'Playfair Display',serif; font-size:14px; color:var(--gold-dark); font-weight:700; letter-spacing:2px;}
+  .service-text h3{font-size:24px; margin:10px 0 12px;}
+  .service-text p{font-size:14.5px; margin-bottom:16px;}
+  .tick-list{list-style:none; margin:0 0 18px; padding:0; display:flex; flex-direction:column; gap:9px;}
+  .tick-list li{display:flex; align-items:center; gap:9px; font-size:13.5px; color:var(--ink);}
+  .tick-list svg{width:16px;height:16px; stroke:var(--gold-dark); flex:0 0 auto;}
+  @media (max-width:820px){ .service-row, .service-row:nth-child(even){grid-template-columns:1fr !important;} .service-row:nth-child(even) .service-photo{order:0;} }
+
+  /* ===== DRIVER ASSIGN PAGE ===== */
+  .driver-wrap{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:flex-start;}
+  @media (max-width:900px){ .driver-wrap{grid-template-columns:1fr;} }
+  .card-panel{background:var(--paper); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); padding:32px;}
+  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .form-grid .full{grid-column:1 / -1;}
+  .field label{display:block; font-size:12.5px; font-weight:600; color:var(--ink); margin-bottom:7px;}
+  .field input, .field select, .field textarea{
+    width:100%; padding:12px 14px; border-radius:10px; border:1.4px solid var(--line); background:var(--cream);
+    font-family:inherit; font-size:13.5px; color:var(--ink); outline:none; transition:border-color .15s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--gold);}
+  .field textarea{resize:vertical; min-height:90px;}
+  .driver-type-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:20px;}
+  .driver-type{border:1.4px solid var(--line); border-radius:12px; padding:16px 10px; text-align:center; background:var(--paper);}
+  .driver-type .ico{width:40px;height:40px;border-radius:50%; margin:0 auto 8px; background:var(--cream-2); display:flex;align-items:center;justify-content:center;}
+  .driver-type .ico svg{width:18px;height:18px; stroke:var(--gold-dark);}
+  .driver-type h4{font-size:13.5px; margin-bottom:3px;}
+  .driver-type span{font-size:11.5px; color:var(--muted);}
+  .success-note{
+    display:none; margin-top:16px; padding:14px 16px; border-radius:12px; background:#e9f7ef; border:1px solid #bfe6cf; color:#1f6b3f; font-size:13.5px; font-weight:500;
+    align-items:center; gap:10px;
+  }
+  :root[data-theme="dark"] .success-note{background:#123322; border-color:#1f5138; color:#8fe0b1;}
+  .success-note.show{display:flex;}
+  .success-note svg{width:18px;height:18px; stroke:#1f6b3f; flex:0 0 auto;}
+
+  /* ===== GALLERY PAGE ===== */
+  .gallery-filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px;}
+  .gal-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:170px; gap:14px;}
+  .gal-item{border-radius:14px; overflow:hidden; position:relative; cursor:pointer; box-shadow:var(--shadow);}
+  .gal-item.tall{grid-row:span 2;}
+  .gal-item.wide{grid-column:span 2;}
+  .gal-item .cap{
+    position:absolute; left:0; right:0; bottom:0; padding:14px; color:#fff; font-size:13px; font-weight:600;
+    background:linear-gradient(0deg, rgba(0,0,0,.55), transparent);
+  }
+  .lightbox{
+    position:fixed; inset:0; background:rgba(10,15,25,.86); z-index:2000; display:none; align-items:center; justify-content:center; padding:30px;
+  }
+  .lightbox.show{display:flex;}
+  .lightbox-inner{max-width:640px; width:100%; background:var(--paper); border-radius:16px; overflow:hidden;}
+  .lightbox-photo{height:320px;}
+  .lightbox-body{padding:22px 26px;}
+  .lightbox-close{position:absolute; top:22px; right:26px; width:40px;height:40px; border-radius:50%; background:rgba(255,255,255,.15); border:none; display:flex; align-items:center; justify-content:center;}
+  .lightbox-close svg{width:18px;height:18px;stroke:#fff;}
+
+  /* ===== CONTACT PAGE ===== */
+  .contact-wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:50px; align-items:flex-start;}
+  @media (max-width:900px){ .contact-wrap{grid-template-columns:1fr;} }
+  .info-item{display:flex; gap:16px; padding:18px 0; border-bottom:1px solid var(--line);}
+  .info-item:last-child{border-bottom:none;}
+  .info-item .ico{width:46px;height:46px;border-radius:50%; background:var(--cream-2); display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  .info-item .ico svg{width:20px;height:20px; stroke:var(--gold-dark);}
+  .info-item h4{font-size:14.5px; margin-bottom:4px;}
+  .info-item p{font-size:13px;}
+  .map-block{
+    margin-top:24px; height:200px; border-radius:14px; position:relative; overflow:hidden;
+    background:
+      linear-gradient(135deg,#dfe9ee,#c8d8e0);
+  }
+
+  /* ===== TOASTS ===== */
+  .toast{
+    position:fixed; bottom:26px; left:50%; transform:translateX(-50%) translateY(20px); z-index:3000;
+    background:var(--navy); color:#fff; padding:14px 22px; border-radius:999px; font-size:13.5px; font-weight:500;
+    box-shadow:0 12px 30px rgba(0,0,0,.3); opacity:0; pointer-events:none; transition:all .3s ease;
+    display:flex; align-items:center; gap:10px;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  .toast svg{width:16px;height:16px; stroke:#ffd98a;}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:980px){
+    nav.main-nav{display:none;}
+    .contact-chip{display:none;}
+    .hamburger{display:flex;}
+    .feat-grid{grid-template-columns:repeat(3,1fr);}
+    .svc-grid{grid-template-columns:1fr;}
+    .pkg-grid{grid-template-columns:repeat(2,1fr);}
+    .trust-grid{grid-template-columns:repeat(2,1fr);}
+    .stat-row{grid-template-columns:repeat(2,1fr);}
+    .value-grid{grid-template-columns:1fr;}
+    .foot-top{grid-template-columns:1fr 1fr;}
+    .gal-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 18px;}
+    .pkg-grid{grid-template-columns:1fr 1fr;}
+    .form-grid{grid-template-columns:1fr;}
+    .driver-type-grid{grid-template-columns:1fr 1fr;}
+    section{padding:52px 0;}
+    .offer-inner{flex-direction:column; align-items:flex-start;}
+  }
+
+  /* mobile nav drawer */
+  .mobile-nav{
+    position:fixed; inset:0; background:var(--navy); z-index:1500; display:none; flex-direction:column; padding:26px;
+    padding-top: calc(26px + env(safe-area-inset-top,0px));
+  }
+  .mobile-nav.show{display:flex;}
+  .mobile-nav .close-row{display:flex; justify-content:flex-end;}
+  .mobile-nav .close-row button{background:rgba(255,255,255,.12); border:none; width:40px;height:40px;border-radius:50%; display:flex; align-items:center; justify-content:center;}
+  .mobile-nav .close-row svg{width:18px;height:18px;stroke:#fff;}
+  .mobile-nav a{color:#fff; font-size:22px; font-family:'Playfair Display',serif; padding:16px 4px; border-bottom:1px solid rgba(255,255,255,.1);}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap topbar">
+    <div class="brand">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#3a2705" stroke-width="1.6"><path d="M12 3c1 3 3 4 6 4-1 3-3 4-6 7-3-3-5-4-6-7 3 0 5-1 6-4Z"/></svg></div>
+      <div>
+        <div class="name">KARWAA</div>
+        <div class="tag">A UNIT OF MCS ASSOCIATES</div>
+      </div>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" data-page="home" class="active">Home</a>
+      <a href="#about" data-page="about">About Us</a>
+      <a href="#packages" data-page="packages">Packages</a>
+      <a href="#services" data-page="services">Services</a>
+      <a href="#driver" data-page="driver">Driver Assign</a>
+      <a href="#gallery" data-page="gallery">Gallery</a>
+      <a href="#contact" data-page="contact">Contact</a>
+    </nav>
+    <div class="top-actions">
+      <div class="contact-chip">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 3a2 2 0 0 1-.4 2.1L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .7 3 .8a2 2 0 0 1 1.7 2Z"/></svg></div>
+        <div><b>+91 9311033931</b><span>Call / WhatsApp</span></div>
+      </div>
+      <div class="contact-chip">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 5 8 7 8-7"/></svg></div>
+        <div><b>sonuupawaar@gmail.com</b><span>Email Us</span></div>
+      </div>
+      <button class="btn small" onclick="goTo('contact')">Book Now →</button>
+      <button class="hamburger" onclick="toggleMobileNav(true)"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="close-row"><button onclick="toggleMobileNav(false)"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <a href="#home" data-page="home">Home</a>
+  <a href="#about" data-page="about">About Us</a>
+  <a href="#packages" data-page="packages">Packages</a>
+  <a href="#services" data-page="services">Services</a>
+  <a href="#driver" data-page="driver">Driver Assign</a>
+  <a href="#gallery" data-page="gallery">Gallery</a>
+  <a href="#contact" data-page="contact">Contact</a>
+</div>
+
+<!-- ================= HOME PAGE ================= -->
+<main class="page visible" id="page-home">
+
+  <section class="hero" style="padding:0;">
+    <div class="hero-art">
+      <svg class="hero-mountains" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,560 0,300 180,160 320,300 480,120 650,300 800,190 1000,320 1200,220 1200,560" fill="#6d93a8" opacity="0.55"/>
+        <polygon points="150,560 150,340 380,150 560,340 760,190 950,360 1200,280 1200,560 0,560" fill="#537e93" opacity="0.7"/>
+        <polygon points="0,560 250,380 430,250 620,380 840,260 1050,400 1200,340 1200,560" fill="#3a6178"/>
+        <circle cx="960" cy="90" r="52" fill="#ffe3a0" opacity="0.85"/>
+      </svg>
+      <div class="hero-overlay"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">EXPLORE • EXPERIENCE • CREATE MEMORIES</span>
+          <h1>Your Next Journey<em>Starts Here</em></h1>
+          <p>Discover breathtaking destinations, premium stays, comfortable travel and personalized services — all in one place.</p>
+          <form class="search-card" id="searchForm">
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+              <div><label>Where are you going?</label><input type="text" placeholder="Destination / City" required></div>
+            </div>
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+              <div><label>Check In - Check Out</label><input type="text" placeholder="Select Dates" onfocus="this.type='date'"></div>
+            </div>
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="8" r="3.4"/><path d="M4 21c1.6-4 4.6-6 8-6s6.4 2 8 6"/></svg>
+              <div><label>Travellers</label>
+                <select>
+                  <option>1 Room, 2 Adults</option>
+                  <option>1 Room, 1 Adult</option>
+                  <option>2 Rooms, 4 Adults</option>
+                  <option>Family (2A + 2C)</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn" type="submit">Search <svg viewBox="0 0 24 24" fill="none" stroke="#241a08" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+          </form>
+        </div>
+      </div>
+      <div class="hero-hint">Travel More<br>Worry Less ✈</div>
+    </div>
+  </section>
+
+  <!-- FEATURES STRIP -->
+  <div class="features">
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 17h14M5 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm14 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM5 13l1.5-5A2 2 0 0 1 8.4 6.6h7.2A2 2 0 0 1 17.5 8l1.5 5"/></svg></div><h4>Driver Assign</h4><p>Safe &amp; Reliable Drivers</p></div>
+        <div class="feat-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M2 16.5 21 8l-2.5 9.5-16.5-1Z"/><path d="M11 12.5 22 8"/></svg></div><h4>Tour Packages</h4><p>Domestic &amp; International</p></div>
+        <div class="feat-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 21V7l8-4 8 4v14"/><path d="M9 21v-6h6v6M9 11h.01M15 11h.01M9 7h.01M15 7h.01"/></svg></div><h4>Hotel Bookings</h4><p>Luxury &amp; Budget Stays</p></div>
+        <div class="feat-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="7" width="14" height="9" rx="2"/><path d="M17 10h3l2 3v3h-5"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg></div><h4>Transport Services</h4><p>Cars, Vans &amp; Buses</p></div>
+        <div class="feat-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21s-7-5-9-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 5-9 10-9 10Z"/></svg></div><h4>Customized Trips</h4><p>Your Trip, Your Way</p></div>
+        <div class="feat-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3ZM3 19a2 2 0 0 0 2 2h1v-6H3Z"/></svg></div><h4>24/7 Support</h4><p>Always Here for You</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES OVERVIEW -->
+  <section>
+    <div class="wrap">
+      <div class="split" style="margin-bottom:44px;">
+        <div>
+          <span class="eyebrow">OUR SERVICES</span>
+          <h2 style="margin-top:14px;">Everything You Need<br>for the Perfect Trip</h2>
+          <p style="margin-top:16px;">From personal drivers to curated travel packages, we make your journey smooth, safe and memorable.</p>
+          <button class="btn" style="margin-top:24px;" onclick="goTo('services')">Explore All Services →</button>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-card">
+            <div class="svc-photo" style="background:linear-gradient(160deg,#2a3a52,#0f1622);"></div>
+            <div class="svc-body"><h3>Driver Assign</h3><p>Professional &amp; verified drivers for your convenience.</p><a class="svc-link" href="#driver" data-page="driver">Book Now →</a></div>
+          </div>
+          <div class="svc-card">
+            <div class="svc-photo" style="background:linear-gradient(160deg,#7fb0c8,#3a6178);"></div>
+            <div class="svc-body"><h3>Tour Packages</h3><p>Explore handpicked destinations with exclusive packages.</p><a class="svc-link" href="#packages" data-page="packages">View Packages →</a></div>
+          </div>
+          <div class="svc-card">
+            <div class="svc-photo" style="background:linear-gradient(160deg,#68d6d1,#1b7f8c);"></div>
+            <div class="svc-body"><h3>Hotels</h3><p>Premium &amp; budget stays for every traveler.</p><a class="svc-link" href="#packages" data-page="packages">Book Hotel →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR PACKAGES -->
+  <section style="background:var(--cream-2); padding-top:64px;">
+    <div class="wrap">
+      <div class="pkg-head-row">
+        <div>
+          <span class="eyebrow">FEATURED PACKAGES</span>
+          <h2 style="margin-top:14px;">Popular Tour Packages</h2>
+          <p style="margin-top:10px;">Explore our most loved destinations and handpicked travel experiences.</p>
+        </div>
+        <a href="#packages" data-page="packages" class="svc-link">View All Packages →</a>
+      </div>
+      <div class="pkg-grid" id="homePkgGrid"></div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="trust">
+    <div class="wrap">
+      <div class="trust-grid">
+        <div style="max-width:230px;">
+          <span class="eyebrow">WHY CHOOSE US</span>
+          <h2 style="margin-top:12px; font-size:26px;">Your Trust,<br>Our Priority</h2>
+          <p style="margin-top:10px; font-size:13.5px;">We go the extra mile to make your travel experience safe, comfortable and memorable.</p>
+        </div>
+        <div class="trust-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><h4>Trusted &amp; Verified<br>Drivers</h4></div>
+        <div class="trust-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3l2.6 5.6L21 9l-4.5 4 1.1 6.4L12 16.3 6.4 19.4 7.5 13 3 9l6.4-.4L12 3Z"/></svg></div><h4>Premium<br>Hotels &amp; Resorts</h4></div>
+        <div class="trust-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="8" r="2.6"/><path d="M16 14.2c2.7.5 5 2.6 5 5.8"/></svg></div><h4>1000+ Happy<br>Travelers</h4></div>
+        <div class="trust-item"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3ZM3 19a2 2 0 0 0 2 2h1v-6H3Z"/></svg></div><h4>24/7 Customer<br>Support</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER BANNER -->
+  <div class="offer">
+    <div class="offer-inner">
+      <div class="offer-left">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd98a" stroke-width="1.8"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13"/><path d="M12 8c-1.8 0-3-1-3-2.5S10 3 12 3s3 1 3 2.5S13.8 8 12 8Z"/></svg></div>
+        <div><h3>Special Offers</h3><p>Get exclusive deals on tour packages, hotel bookings and more.</p></div>
+      </div>
+      <button class="btn" onclick="goTo('packages')">View Offers →</button>
+    </div>
+  </div>
+
+</main>
+
+<!-- ================= ABOUT PAGE ================= -->
+<main class="page" id="page-about">
+  <div class="page-hero">
+    <span class="eyebrow">ABOUT KARWAA</span>
+    <h1>Crafting Journeys Since Day One</h1>
+    <p>Karwaa Hospitality Pvt. Ltd., a unit of MCS Associates, brings together dependable drivers, curated packages and dedicated support to make every trip effortless.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="split">
+        <div class="svc-photo" style="height:340px; border-radius:18px; background:linear-gradient(160deg,#7fb0c8,#16263f); box-shadow:var(--shadow);"></div>
+        <div>
+          <span class="eyebrow">OUR STORY</span>
+          <h2 style="margin-top:14px;">Built on Trust, Driven by Experience</h2>
+          <p style="margin-top:16px; font-size:14.5px;">What began as a small driver-assignment desk has grown into a full-service travel partner. Today Karwaa handles everything from a single airport pickup to multi-city honeymoon itineraries — always with the same promise: verified people, honest pricing and support that actually picks up the phone.</p>
+          <p style="margin-top:14px; font-size:14.5px;">We work with a hand-picked network of drivers, hotels and local guides across India and popular international destinations, so every recommendation we make is one we'd give our own family.</p>
+        </div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card"><b>9+</b><span>Years of Service</span></div>
+        <div class="stat-card"><b>1000+</b><span>Happy Travelers</span></div>
+        <div class="stat-card"><b>120+</b><span>Verified Drivers</span></div>
+        <div class="stat-card"><b>35+</b><span>Destinations Covered</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--cream-2);">
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 36px; text-align:center;">
+        <span class="eyebrow" style="justify-content:center;">WHAT DRIVES US</span>
+        <h2>Our Core Values</h2>
+      </div>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6l-8-3Z"/></svg></div>
+          <h4>Safety First</h4>
+          <p>Every driver is background-verified and every vehicle inspected before it's assigned to you.</p>
+        </div>
+        <div class="value-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21s-7-5-9-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 5-9 10-9 10Z"/></svg></div>
+          <h4>Care in Every Detail</h4>
+          <p>From the first enquiry to the ride home, we plan the small things so your trip feels effortless.</p>
+        </div>
+        <div class="value-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3ZM3 19a2 2 0 0 0 2 2h1v-6H3Z"/></svg></div>
+          <h4>Always Reachable</h4>
+          <p>Real people answer our calls and WhatsApp around the clock — no chatbots, no waiting in queues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= PACKAGES PAGE ================= -->
+<main class="page" id="page-packages">
+  <div class="page-hero">
+    <span class="eyebrow">FEATURED PACKAGES</span>
+    <h1>Popular Tour Packages</h1>
+    <p>Explore our most loved destinations and handpicked travel experiences, from misty hills to island shores.</p>
+  </div>
+  <section>
+    <div class="wrap">
+      <div class="filter-row" id="filterRow"></div>
+      <div class="pkg-grid" id="allPkgGrid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= SERVICES PAGE ================= -->
+<main class="page" id="page-services">
+  <div class="page-hero">
+    <span class="eyebrow">OUR SERVICES</span>
+    <h1>Everything You Need for the Perfect Trip</h1>
+    <p>From personal drivers to curated travel packages, we make your journey smooth, safe and memorable.</p>
+  </div>
+  <section style="padding-top:20px;">
+    <div class="wrap">
+      <div class="service-list">
+        <div class="service-row">
+          <div class="service-photo" style="background:linear-gradient(160deg,#2a3a52,#0f1622);"></div>
+          <div class="service-text">
+            <span class="service-num">01 — DRIVER ASSIGN</span>
+            <h3>Professional &amp; Verified Drivers</h3>
+            <p>Every driver on our roster is background-checked, licensed and trained in guest etiquette, so you can hand over the wheel with total peace of mind.</p>
+            <ul class="tick-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Verified ID &amp; police check</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Local route knowledge</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Available for outstation trips</li>
+            </ul>
+            <button class="btn small" onclick="goTo('driver')">Request a Driver →</button>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-photo" style="background:linear-gradient(160deg,#7fb0c8,#3a6178);"></div>
+          <div class="service-text">
+            <span class="service-num">02 — TOUR PACKAGES</span>
+            <h3>Domestic &amp; International Getaways</h3>
+            <p>Handpicked itineraries across hill stations, beaches, heritage cities and island escapes — each one built around comfortable pacing, not a packed checklist.</p>
+            <ul class="tick-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Flexible 3–7 day itineraries</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Breakfast &amp; stays included</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Custom family &amp; honeymoon plans</li>
+            </ul>
+            <button class="btn small" onclick="goTo('packages')">View Packages →</button>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-photo" style="background:linear-gradient(160deg,#68d6d1,#1b7f8c);"></div>
+          <div class="service-text">
+            <span class="service-num">03 — HOTEL BOOKINGS</span>
+            <h3>Luxury &amp; Budget Stays</h3>
+            <p>From boutique homestays to five-star resorts, we match your budget and travel style with stays we've personally vetted.</p>
+            <ul class="tick-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Best-rate guarantee</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Free cancellation on select stays</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Family &amp; couple friendly options</li>
+            </ul>
+            <button class="btn small" onclick="goTo('contact')">Enquire Now →</button>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-photo" style="background:linear-gradient(160deg,#c9982f,#7a5a12);"></div>
+          <div class="service-text">
+            <span class="service-num">04 — TRANSPORT SERVICES</span>
+            <h3>Cars, Vans &amp; Buses</h3>
+            <p>A mixed fleet for every group size — sedans for couples, SUVs for families, and tempo travellers or coaches for larger groups and corporate outings.</p>
+            <ul class="tick-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Sanitized, AC vehicles</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Airport transfers &amp; local rentals</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Group &amp; corporate bookings</li>
+            </ul>
+            <button class="btn small" onclick="goTo('driver')">Book Transport →</button>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-photo" style="background:linear-gradient(160deg,#8f6fc9,#3a2a63);"></div>
+          <div class="service-text">
+            <span class="service-num">05 — CUSTOMIZED TRIPS</span>
+            <h3>Your Trip, Your Way</h3>
+            <p>Tell us your dream itinerary — a slow food trail, a photography road trip, a multi-generation family reunion — and we'll design the logistics around it.</p>
+            <ul class="tick-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Dedicated trip planner</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Pace &amp; budget built around you</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>One point of contact throughout</li>
+            </ul>
+            <button class="btn small" onclick="goTo('contact')">Plan My Trip →</button>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-photo" style="background:linear-gradient(160deg,#e07a5f,#8c3d2a);"></div>
+          <div class="service-text">
+            <span class="service-num">06 — 24/7 SUPPORT</span>
+            <h3>Always Here for You</h3>
+            <p>A trip rarely goes exactly to plan — a flight moves, a driver needs a swap. Our support desk is reachable any hour of any day to sort it out.</p>
+            <ul class="tick-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Call &amp; WhatsApp support</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Real-time itinerary changes</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Emergency assistance on the road</li>
+            </ul>
+            <button class="btn small" onclick="goTo('contact')">Contact Support →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= DRIVER ASSIGN PAGE ================= -->
+<main class="page" id="page-driver">
+  <div class="page-hero">
+    <span class="eyebrow">DRIVER ASSIGN</span>
+    <h1>Request a Verified Driver</h1>
+    <p>Tell us your pickup details and preferred vehicle — we'll assign a background-verified driver and confirm within the hour.</p>
+  </div>
+  <section style="padding-top:20px;">
+    <div class="wrap driver-wrap">
+      <div class="card-panel">
+        <h3 style="font-size:20px; margin-bottom:18px;">Booking Details</h3>
+        <form id="driverForm">
+          <div class="form-grid">
+            <div class="field"><label>Full Name</label><input type="text" placeholder="Your name" required></div>
+            <div class="field"><label>Phone Number</label><input type="tel" placeholder="+91 00000 00000" required></div>
+            <div class="field"><label>Pickup Location</label><input type="text" placeholder="Address / Landmark" required></div>
+            <div class="field"><label>Drop Location</label><input type="text" placeholder="Destination"></div>
+            <div class="field"><label>Date</label><input type="date" required></div>
+            <div class="field"><label>Time</label><input type="time" required></div>
+            <div class="field full"><label>Vehicle Type</label>
+              <select>
+                <option>Sedan — Local/Outstation</option>
+                <option>SUV — Family Trip</option>
+                <option>Tempo Traveller — Group</option>
+                <option>Luxury Car</option>
+              </select>
+            </div>
+            <div class="field full"><label>Additional Notes</label><textarea placeholder="Any special requirements..."></textarea></div>
+          </div>
+          <button class="btn" style="width:100%; margin-top:20px;" type="submit">Assign My Driver →</button>
+          <div class="success-note" id="driverSuccess"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Request received! Our team will call you shortly to confirm your driver.</div>
+        </form>
+      </div>
+
+      <div>
+        <h3 style="font-size:20px; margin-bottom:16px;">Choose Your Ride</h3>
+        <div class="driver-type-grid">
+          <div class="driver-type"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="9" width="18" height="8" rx="2"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/></svg></div><h4>Sedan</h4><span>2–4 people</span></div>
+          <div class="driver-type"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="8" width="20" height="9" rx="2"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg></div><h4>SUV</h4><span>4–6 people</span></div>
+          <div class="driver-type"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M2 12h20"/></svg></div><h4>Tempo</h4><span>8–12 people</span></div>
+        </div>
+
+        <div class="card-panel" style="margin-top:26px;">
+          <h4 style="font-size:15.5px; margin-bottom:14px;">Why book with Karwaa?</h4>
+          <ul class="tick-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Confirmed driver within 60 minutes</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Transparent, upfront pricing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Free cancellation up to 2 hours prior</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>24/7 in-trip support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= GALLERY PAGE ================= -->
+<main class="page" id="page-gallery">
+  <div class="page-hero">
+    <span class="eyebrow">GALLERY</span>
+    <h1>Moments From Our Travels</h1>
+    <p>A look at the destinations, drives and stays our travelers have enjoyed with Karwaa.</p>
+  </div>
+  <section style="padding-top:20px;">
+    <div class="wrap">
+      <div class="gallery-filters" id="galFilters"></div>
+      <div class="gal-grid" id="galGrid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= CONTACT PAGE ================= -->
+<main class="page" id="page-contact">
+  <div class="page-hero">
+    <span class="eyebrow">GET IN TOUCH</span>
+    <h1>We'd Love to Plan Your Trip</h1>
+    <p>Reach out for bookings, custom itineraries, or just to ask a question — we typically reply within the hour.</p>
+  </div>
+  <section style="padding-top:20px;">
+    <div class="wrap contact-wrap">
+      <div>
+        <div class="card-panel">
+          <div class="info-item">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 3a2 2 0 0 1-.4 2.1L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .7 3 .8a2 2 0 0 1 1.7 2Z"/></svg></div>
+            <div><h4>Call / WhatsApp</h4><p>+91 9311033931</p></div>
+          </div>
+          <div class="info-item">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 5 8 7 8-7"/></svg></div>
+            <div><h4>Email Us</h4><p>sonuupawaar@gmail.com</p></div>
+          </div>
+          <div class="info-item">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12Z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+            <div><h4>Visit Us</h4><p>Karwaa Hospitality Pvt. Ltd., a unit of MCS Associates</p></div>
+          </div>
+          <div class="info-item">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <div><h4>Working Hours</h4><p>24/7 — every day of the year</p></div>
+          </div>
+        </div>
+        <div class="map-block">
+          <svg viewBox="0 0 400 200" style="position:absolute; inset:0; width:100%; height:100%;">
+            <path d="M0,140 C60,100 120,160 180,120 C240,90 300,150 400,110 L400,200 L0,200 Z" fill="#b8cdd6"/>
+            <circle cx="210" cy="95" r="7" fill="#c9982f" stroke="#fff" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card-panel">
+        <h3 style="font-size:20px; margin-bottom:18px;">Send a Message</h3>
+        <form id="contactForm">
+          <div class="form-grid">
+            <div class="field"><label>Full Name</label><input type="text" placeholder="Your name" required></div>
+            <div class="field"><label>Phone Number</label><input type="tel" placeholder="+91 00000 00000" required></div>
+            <div class="field full"><label>Email Address</label><input type="email" placeholder="you@email.com" required></div>
+            <div class="field full"><label>Subject</label>
+              <select>
+                <option>Tour Package Enquiry</option>
+                <option>Driver / Transport Booking</option>
+                <option>Hotel Booking</option>
+                <option>Custom Trip Request</option>
+                <option>General Question</option>
+              </select>
+            </div>
+            <div class="field full"><label>Message</label><textarea placeholder="Tell us about your trip..." required></textarea></div>
+          </div>
+          <button class="btn" style="width:100%; margin-top:20px;" type="submit">Send Message →</button>
+          <div class="success-note" id="contactSuccess"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Thanks! Your message has been sent — we'll be in touch shortly.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="lightbox-inner">
+    <div class="lightbox-photo" id="lbPhoto"></div>
+    <div class="lightbox-body"><h3 id="lbTitle" style="font-size:20px;"></h3><p id="lbDesc" style="margin-top:8px; font-size:13.5px;"></p></div>
+  </div>
+</div>
+
+<!-- ================= TOAST ================= -->
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span id="toastMsg"></span></div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">
+          <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#3a2705" stroke-width="1.6"><path d="M12 3c1 3 3 4 6 4-1 3-3 4-6 7-3-3-5-4-6-7 3 0 5-1 6-4Z"/></svg></div>
+          <div><div class="name">KARWAA</div><div class="tag" style="color:#7d8aa0;">A UNIT OF MCS ASSOCIATES</div></div>
+        </div>
+        <p>Your trusted partner for drivers, tours, hotels and everything in between — travel more, worry less.</p>
+        <div class="foot-social">
+          <a href="#" onclick="return false;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg></a>
+          <a href="#" onclick="return false;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+          <a href="#" onclick="return false;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+          <a href="#" onclick="return false;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12Z"/><circle cx="12" cy="10" r="2.4"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Quick Links</h4>
+        <a href="#home" data-page="home">Home</a>
+        <a href="#about" data-page="about">About Us</a>
+        <a href="#packages" data-page="packages">Packages</a>
+        <a href="#services" data-page="services">Services</a>
+      </div>
+      <div class="foot-col">
+        <h4>More</h4>
+        <a href="#driver" data-page="driver">Driver Assign</a>
+        <a href="#gallery" data-page="gallery">Gallery</a>
+        <a href="#contact" data-page="contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <div>+91 9311033931</div>
+        <div>sonuupawaar@gmail.com</div>
+        <div>Available 24/7</div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Karwaa Hospitality Pvt. Ltd. A unit of MCS Associates. All Rights Reserved.</span>
+      <span><a href="#home" data-page="home">Home</a><a href="#about" data-page="about">About Us</a><a href="#packages" data-page="packages">Packages</a><a href="#services" data-page="services">Services</a><a href="#driver" data-page="driver">Driver Assign</a><a href="#gallery" data-page="gallery">Gallery</a><a href="#contact" data-page="contact">Contact</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Package data ----------
+  const packages = [
+    {id:1, name:"Kerala Getaway", loc:"Kerala", price:"₹12,999", nights:"4 Nights / 5 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#2f5d4a,#0f2a20)", tag:"Backwaters"},
+    {id:2, name:"Himachal Escape", loc:"Himachal Pradesh", price:"₹15,999", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#7fb0c8,#2b4a5e)", tag:"Mountains"},
+    {id:3, name:"Goa Beach Holiday", loc:"Goa", price:"₹13,999", nights:"4 Nights / 5 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#5fc7c2,#136b73)", tag:"Beaches"},
+    {id:4, name:"Rajasthan Royal Tour", loc:"Rajasthan", price:"₹18,999", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#c9982f,#7a4a12)", tag:"Heritage"},
+    {id:5, name:"Maldives Honeymoon", loc:"Maldives", price:"₹45,999", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#4fd1e0,#0f6e8c)", tag:"Islands"},
+    {id:6, name:"Manali Snow Trail", loc:"Himachal Pradesh", price:"₹16,499", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#9fb8c9,#33506b)", tag:"Mountains"},
+    {id:7, name:"Andaman Island Escape", loc:"Andaman", price:"₹28,999", nights:"6 Nights / 7 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#3fc1c9,#0d5e66)", tag:"Islands"},
+    {id:8, name:"Udaipur Lakeside Tour", loc:"Rajasthan", price:"₹17,499", nights:"3 Nights / 4 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#d9a441,#8a5b13)", tag:"Heritage"},
+    {id:9, name:"Munnar Hills Retreat", loc:"Kerala", price:"₹14,499", nights:"4 Nights / 5 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#4c8c5e,#123a22)", tag:"Backwaters"},
+    {id:10,name:"Bali Island Getaway", loc:"Bali", price:"₹39,999", nights:"6 Nights / 7 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#59b7d1,#1c4c66)", tag:"Islands"},
+  ];
+
+  function pkgCard(p){
+    return `<div class="pkg-card">
+      <div class="pkg-photo" style="background:${p.grad};">
+        <span class="pkg-price">${p.price}</span>
+      </div>
+      <div class="pkg-body">
+        <h4>${p.name}</h4>
+        <div class="pkg-meta"><span>${p.nights}</span><span>•</span><span>${p.tags.join(', ')}</span></div>
+        <div class="pkg-loc">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12Z"/><circle cx="12" cy="10" r="2"/></svg>${p.loc}</span>
+          <button onclick="showToast('Added ${p.name.replace(/'/g,"")} to your enquiry list')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  document.getElementById('homePkgGrid').innerHTML = packages.slice(0,5).map(pkgCard).join('');
+  document.getElementById('allPkgGrid').innerHTML = packages.map(pkgCard).join('');
+
+  const regions = ["All", ...new Set(packages.map(p=>p.tag))];
+  document.getElementById('filterRow').innerHTML = regions.map((r,i)=>`<button class="chip ${i===0?'active':''}" data-tag="${r}">${r}</button>`).join('');
+  document.querySelectorAll('#filterRow .chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      document.querySelectorAll('#filterRow .chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      const tag = chip.dataset.tag;
+      const filtered = tag==="All" ? packages : packages.filter(p=>p.tag===tag);
+      document.getElementById('allPkgGrid').innerHTML = filtered.map(pkgCard).join('') || '<p style="grid-column:1/-1;">No packages found for this category yet.</p>';
+    });
+  });
+
+  // ---------- Gallery data ----------
+  const galleryItems = [
+    {title:"Kerala Backwaters", cat:"Backwaters", grad:"linear-gradient(160deg,#2f5d4a,#0f2a20)", cls:"wide", desc:"A houseboat drifting through the palm-lined canals of Alleppey."},
+    {title:"Himalayan Peaks", cat:"Mountains", grad:"linear-gradient(160deg,#7fb0c8,#2b4a5e)", cls:"tall", desc:"Snow-dusted ridgelines along the Manali–Rohtang route."},
+    {title:"Goa Coastline", cat:"Beaches", grad:"linear-gradient(160deg,#5fc7c2,#136b73)", cls:"", desc:"Golden hour along Goa's quieter southern beaches."},
+    {title:"Rajasthan Fort", cat:"Heritage", grad:"linear-gradient(160deg,#c9982f,#7a4a12)", cls:"", desc:"Sandstone ramparts of a centuries-old Rajasthani fort."},
+    {title:"Maldives Overwater Villas", cat:"Islands", grad:"linear-gradient(160deg,#4fd1e0,#0f6e8c)", cls:"wide", desc:"Turquoise lagoons framing private overwater stays."},
+    {title:"Munnar Tea Gardens", cat:"Backwaters", grad:"linear-gradient(160deg,#4c8c5e,#123a22)", cls:"", desc:"Rolling green tea estates across the Western Ghats."},
+    {title:"Udaipur Lake Palace", cat:"Heritage", grad:"linear-gradient(160deg,#d9a441,#8a5b13)", cls:"tall", desc:"The City of Lakes at dusk, seen from a rooftop café."},
+    {title:"Andaman Reef", cat:"Islands", grad:"linear-gradient(160deg,#3fc1c9,#0d5e66)", cls:"", desc:"Clear waters and coral reefs off Havelock Island."},
+    {title:"Snow Valley Drive", cat:"Mountains", grad:"linear-gradient(160deg,#9fb8c9,#33506b)", cls:"", desc:"A winding mountain road through fresh snowfall."},
+  ];
+  function galCard(g,i){
+    return `<div class="gal-item ${g.cls}" style="background:${g.grad};" data-cat="${g.cat}" onclick="openLightbox(${i})"><div class="cap">${g.title}</div></div>`;
+  }
+  function renderGallery(cat){
+    const filtered = cat==="All" ? galleryItems : galleryItems.filter(g=>g.cat===cat);
+    document.getElementById('galGrid').innerHTML = filtered.map((g)=>galCard(g, galleryItems.indexOf(g))).join('');
+  }
+  const galCats = ["All", ...new Set(galleryItems.map(g=>g.cat))];
+  document.getElementById('galFilters').innerHTML = galCats.map((c,i)=>`<button class="chip ${i===0?'active':''}" data-cat="${c}">${c}</button>`).join('');
+  document.querySelectorAll('#galFilters .chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      document.querySelectorAll('#galFilters .chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      renderGallery(chip.dataset.cat);
+    });
+  });
+  renderGallery("All");
+
+  function openLightbox(i){
+    const g = galleryItems[i];
+    document.getElementById('lbPhoto').style.background = g.grad;
+    document.getElementById('lbTitle').textContent = g.title;
+    document.getElementById('lbDesc').textContent = g.desc;
+    document.getElementById('lightbox').classList.add('show');
+  }
+  function closeLightbox(){ document.getElementById('lightbox').classList.remove('show'); }
+  document.getElementById('lightbox').addEventListener('click', e=>{ if(e.target.id==='lightbox') closeLightbox(); });
+
+  // ---------- Navigation ----------
+  function goTo(pageName, pushToHistory = true){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('visible'));
+    const target = document.getElementById('page-'+pageName);
+    if(target){ target.classList.add('visible'); }
+    document.querySelectorAll('[data-page]').forEach(a=>a.classList.toggle('active', a.dataset.page===pageName));
+    window.scrollTo({top:0, behavior:'instant'});
+    if (pushToHistory && location.hash !== '#' + pageName) {
+      history.pushState(null,'','#'+pageName);
+    }
+    toggleMobileNav(false);
+  }
+  document.querySelectorAll('[data-page]').forEach(a=>{
+    a.addEventListener('click', (e)=>{ e.preventDefault(); goTo(a.dataset.page); });
+  });
+  window.addEventListener('popstate', ()=>{
+    const page = (location.hash||'#home').replace('#','');
+    const valid = ['home','about','packages','services','driver','gallery','contact'];
+    goTo(valid.includes(page) ? page : 'home', false);
+  });
+  window.addEventListener('DOMContentLoaded', ()=>{
+    const initial = (location.hash||'#home').replace('#','');
+    const valid = ['home','about','packages','services','driver','gallery','contact'];
+    goTo(valid.includes(initial) ? initial : 'home', false);
+  });
+  document.addEventListener('keydown', e=>{
+    if (e.key === 'Escape') {
+      closeLightbox();
+      toggleMobileNav(false);
+    }
+  });
+
+  function toggleMobileNav(state){
+    document.getElementById('mobileNav').classList.toggle('show', state);
+  }
+
+  // ---------- Forms ----------
+  document.getElementById('searchForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    showToast('Searching stays and packages for your trip...');
+    setTimeout(()=>goTo('packages'), 600);
+  });
+  document.getElementById('driverForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    document.getElementById('driverSuccess').classList.add('show');
+    showToast('Driver request submitted successfully');
+    e.target.reset();
+  });
+  document.getElementById('contactForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    document.getElementById('contactSuccess').classList.add('show');
+    showToast('Message sent — we will reply shortly');
+    e.target.reset();
+  });
+
+  // ---------- Toast ----------
+  let toastTimer;
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>t.classList.remove('show'), 3200);
+  }
+</script>
+</body>
+</html>

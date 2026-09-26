@@ -98,7 +98,17 @@ A fully responsive, multi-page travel booking website and single-page web applic
 
 ---
 
+## 🖼️ Curated Travel Assets (`images/`)
+
+All photo blocks and cards now feature high-resolution, web-optimized destination and service photography stored locally in the `images/` folder:
+- **Services:** `driver-service.jpg`, `tours-service.jpg`, `hotels-service.jpg`, `transport-service.jpg`, `custom-trips.jpg`, `support-service.jpg`
+- **Story:** `about-story.jpg`
+- **Packages:** `kerala.jpg`, `himachal.jpg`, `goa.jpg`, `rajasthan.jpg`, `maldives.jpg`, `manali.jpg`, `andaman.jpg`, `udaipur.jpg`, `munnar.jpg`, `bali.jpg`
+- **Gallery:** `gal-kerala.jpg`, `gal-himachal.jpg`, `gal-goa.jpg`, `gal-rajasthan.jpg`, `gal-maldives.jpg`, `gal-munnar.jpg`, `gal-udaipur.jpg`, `gal-andaman.jpg`, `gal-snow.jpg`
+
+---
+
 ## 🛠️ Offline & Self-Contained Architecture
 
-- **Zero External Image Dependencies:** All scenic card headers, hero banners, vehicles, and icons are rendered with inline SVG vector graphics.
+- **Local Image Assets:** Every photograph is saved locally within `images/` so the website displays vivid, authentic travel visuals both online and completely offline.
 - **No Build Tools Required:** Simply open `index.html` in any web browser or serve it with any static server.

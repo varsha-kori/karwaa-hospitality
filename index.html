@@ -182,7 +182,7 @@
   /* ===== SERVICES OVERVIEW (home) ===== */
   .svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
   .svc-card{background:var(--paper); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line);}
-  .svc-photo{height:170px; position:relative;}
+  .svc-photo{height:170px; position:relative; background-size:cover; background-position:center;}
   .svc-body{padding:22px 22px 26px;}
   .svc-body h3{font-size:19px; margin-bottom:8px;}
   .svc-body p{font-size:13.5px; margin-bottom:14px;}
@@ -196,7 +196,7 @@
   .pkg-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:18px; margin-top:8px;}
   .pkg-card{background:var(--paper); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); transition:transform .2s ease;}
   .pkg-card:hover{transform:translateY(-4px);}
-  .pkg-photo{height:150px; position:relative;}
+  .pkg-photo{height:150px; position:relative; background-size:cover; background-position:center;}
   .pkg-price{
     position:absolute; top:10px; right:10px; background:#fff; color:var(--navy); font-weight:700; font-size:12.5px;
     padding:5px 10px; border-radius:999px; box-shadow:0 4px 10px rgba(0,0,0,.15);
@@ -284,7 +284,7 @@
   .service-row:last-child{border-bottom:none;}
   .service-row:nth-child(even){grid-template-columns:1.15fr 1fr;}
   .service-row:nth-child(even) .service-photo{order:2;}
-  .service-photo{height:230px; border-radius:var(--radius); position:relative; overflow:hidden; box-shadow:var(--shadow);}
+  .service-photo{height:230px; border-radius:var(--radius); position:relative; overflow:hidden; box-shadow:var(--shadow); background-size:cover; background-position:center;}
   .service-num{font-family:'Playfair Display',serif; font-size:14px; color:var(--gold-dark); font-weight:700; letter-spacing:2px;}
   .service-text h3{font-size:24px; margin:10px 0 12px;}
   .service-text p{font-size:14.5px; margin-bottom:16px;}
@@ -323,19 +323,20 @@
   /* ===== GALLERY PAGE ===== */
   .gallery-filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px;}
   .gal-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:170px; gap:14px;}
-  .gal-item{border-radius:14px; overflow:hidden; position:relative; cursor:pointer; box-shadow:var(--shadow);}
+  .gal-item{border-radius:14px; overflow:hidden; position:relative; cursor:pointer; box-shadow:var(--shadow); background-size:cover; background-position:center; transition:transform .2s ease;}
+  .gal-item:hover{transform:translateY(-3px);}
   .gal-item.tall{grid-row:span 2;}
   .gal-item.wide{grid-column:span 2;}
   .gal-item .cap{
     position:absolute; left:0; right:0; bottom:0; padding:14px; color:#fff; font-size:13px; font-weight:600;
-    background:linear-gradient(0deg, rgba(0,0,0,.55), transparent);
+    background:linear-gradient(0deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,.2) 60%, transparent 100%);
   }
   .lightbox{
     position:fixed; inset:0; background:rgba(10,15,25,.86); z-index:2000; display:none; align-items:center; justify-content:center; padding:30px;
   }
   .lightbox.show{display:flex;}
   .lightbox-inner{max-width:640px; width:100%; background:var(--paper); border-radius:16px; overflow:hidden;}
-  .lightbox-photo{height:320px;}
+  .lightbox-photo{height:320px; background-size:cover; background-position:center;}
   .lightbox-body{padding:22px 26px;}
   .lightbox-close{position:absolute; top:22px; right:26px; width:40px;height:40px; border-radius:50%; background:rgba(255,255,255,.15); border:none; display:flex; align-items:center; justify-content:center;}
   .lightbox-close svg{width:18px;height:18px;stroke:#fff;}
@@ -519,15 +520,15 @@
         </div>
         <div class="svc-grid">
           <div class="svc-card">
-            <div class="svc-photo" style="background:linear-gradient(160deg,#2a3a52,#0f1622);"></div>
+            <div class="svc-photo" style="background-image:url('images/driver-service.jpg');"></div>
             <div class="svc-body"><h3>Driver Assign</h3><p>Professional &amp; verified drivers for your convenience.</p><a class="svc-link" href="#driver" data-page="driver">Book Now →</a></div>
           </div>
           <div class="svc-card">
-            <div class="svc-photo" style="background:linear-gradient(160deg,#7fb0c8,#3a6178);"></div>
+            <div class="svc-photo" style="background-image:url('images/tours-service.jpg');"></div>
             <div class="svc-body"><h3>Tour Packages</h3><p>Explore handpicked destinations with exclusive packages.</p><a class="svc-link" href="#packages" data-page="packages">View Packages →</a></div>
           </div>
           <div class="svc-card">
-            <div class="svc-photo" style="background:linear-gradient(160deg,#68d6d1,#1b7f8c);"></div>
+            <div class="svc-photo" style="background-image:url('images/hotels-service.jpg');"></div>
             <div class="svc-body"><h3>Hotels</h3><p>Premium &amp; budget stays for every traveler.</p><a class="svc-link" href="#packages" data-page="packages">Book Hotel →</a></div>
           </div>
         </div>
@@ -591,7 +592,7 @@
   <section>
     <div class="wrap">
       <div class="split">
-        <div class="svc-photo" style="height:340px; border-radius:18px; background:linear-gradient(160deg,#7fb0c8,#16263f); box-shadow:var(--shadow);"></div>
+        <div class="svc-photo" style="height:340px; border-radius:18px; background-image:url('images/about-story.jpg'); box-shadow:var(--shadow);"></div>
         <div>
           <span class="eyebrow">OUR STORY</span>
           <h2 style="margin-top:14px;">Built on Trust, Driven by Experience</h2>
@@ -662,7 +663,7 @@
     <div class="wrap">
       <div class="service-list">
         <div class="service-row">
-          <div class="service-photo" style="background:linear-gradient(160deg,#2a3a52,#0f1622);"></div>
+          <div class="service-photo" style="background-image:url('images/driver-service.jpg');"></div>
           <div class="service-text">
             <span class="service-num">01 — DRIVER ASSIGN</span>
             <h3>Professional &amp; Verified Drivers</h3>
@@ -677,7 +678,7 @@
         </div>
 
         <div class="service-row">
-          <div class="service-photo" style="background:linear-gradient(160deg,#7fb0c8,#3a6178);"></div>
+          <div class="service-photo" style="background-image:url('images/tours-service.jpg');"></div>
           <div class="service-text">
             <span class="service-num">02 — TOUR PACKAGES</span>
             <h3>Domestic &amp; International Getaways</h3>
@@ -692,7 +693,7 @@
         </div>
 
         <div class="service-row">
-          <div class="service-photo" style="background:linear-gradient(160deg,#68d6d1,#1b7f8c);"></div>
+          <div class="service-photo" style="background-image:url('images/hotels-service.jpg');"></div>
           <div class="service-text">
             <span class="service-num">03 — HOTEL BOOKINGS</span>
             <h3>Luxury &amp; Budget Stays</h3>
@@ -707,7 +708,7 @@
         </div>
 
         <div class="service-row">
-          <div class="service-photo" style="background:linear-gradient(160deg,#c9982f,#7a5a12);"></div>
+          <div class="service-photo" style="background-image:url('images/transport-service.jpg');"></div>
           <div class="service-text">
             <span class="service-num">04 — TRANSPORT SERVICES</span>
             <h3>Cars, Vans &amp; Buses</h3>
@@ -722,7 +723,7 @@
         </div>
 
         <div class="service-row">
-          <div class="service-photo" style="background:linear-gradient(160deg,#8f6fc9,#3a2a63);"></div>
+          <div class="service-photo" style="background-image:url('images/custom-trips.jpg');"></div>
           <div class="service-text">
             <span class="service-num">05 — CUSTOMIZED TRIPS</span>
             <h3>Your Trip, Your Way</h3>
@@ -737,7 +738,7 @@
         </div>
 
         <div class="service-row">
-          <div class="service-photo" style="background:linear-gradient(160deg,#e07a5f,#8c3d2a);"></div>
+          <div class="service-photo" style="background-image:url('images/support-service.jpg');"></div>
           <div class="service-text">
             <span class="service-num">06 — 24/7 SUPPORT</span>
             <h3>Always Here for You</h3>
@@ -947,21 +948,22 @@
 <script>
   // ---------- Package data ----------
   const packages = [
-    {id:1, name:"Kerala Getaway", loc:"Kerala", price:"₹12,999", nights:"4 Nights / 5 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#2f5d4a,#0f2a20)", tag:"Backwaters"},
-    {id:2, name:"Himachal Escape", loc:"Himachal Pradesh", price:"₹15,999", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#7fb0c8,#2b4a5e)", tag:"Mountains"},
-    {id:3, name:"Goa Beach Holiday", loc:"Goa", price:"₹13,999", nights:"4 Nights / 5 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#5fc7c2,#136b73)", tag:"Beaches"},
-    {id:4, name:"Rajasthan Royal Tour", loc:"Rajasthan", price:"₹18,999", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#c9982f,#7a4a12)", tag:"Heritage"},
-    {id:5, name:"Maldives Honeymoon", loc:"Maldives", price:"₹45,999", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#4fd1e0,#0f6e8c)", tag:"Islands"},
-    {id:6, name:"Manali Snow Trail", loc:"Himachal Pradesh", price:"₹16,499", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#9fb8c9,#33506b)", tag:"Mountains"},
-    {id:7, name:"Andaman Island Escape", loc:"Andaman", price:"₹28,999", nights:"6 Nights / 7 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#3fc1c9,#0d5e66)", tag:"Islands"},
-    {id:8, name:"Udaipur Lakeside Tour", loc:"Rajasthan", price:"₹17,499", nights:"3 Nights / 4 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#d9a441,#8a5b13)", tag:"Heritage"},
-    {id:9, name:"Munnar Hills Retreat", loc:"Kerala", price:"₹14,499", nights:"4 Nights / 5 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#4c8c5e,#123a22)", tag:"Backwaters"},
-    {id:10,name:"Bali Island Getaway", loc:"Bali", price:"₹39,999", nights:"6 Nights / 7 Days", tags:["Hotels","Breakfast"], grad:"linear-gradient(160deg,#59b7d1,#1c4c66)", tag:"Islands"},
+    {id:1, name:"Kerala Getaway", loc:"Kerala", price:"₹12,999", nights:"4 Nights / 5 Days", tags:["Hotels","Breakfast"], img:"images/kerala.jpg", grad:"linear-gradient(160deg,#2f5d4a,#0f2a20)", tag:"Backwaters"},
+    {id:2, name:"Himachal Escape", loc:"Himachal Pradesh", price:"₹15,999", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], img:"images/himachal.jpg", grad:"linear-gradient(160deg,#7fb0c8,#2b4a5e)", tag:"Mountains"},
+    {id:3, name:"Goa Beach Holiday", loc:"Goa", price:"₹13,999", nights:"4 Nights / 5 Days", tags:["Hotels","Breakfast"], img:"images/goa.jpg", grad:"linear-gradient(160deg,#5fc7c2,#136b73)", tag:"Beaches"},
+    {id:4, name:"Rajasthan Royal Tour", loc:"Rajasthan", price:"₹18,999", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], img:"images/rajasthan.jpg", grad:"linear-gradient(160deg,#c9982f,#7a4a12)", tag:"Heritage"},
+    {id:5, name:"Maldives Honeymoon", loc:"Maldives", price:"₹45,999", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], img:"images/maldives.jpg", grad:"linear-gradient(160deg,#4fd1e0,#0f6e8c)", tag:"Islands"},
+    {id:6, name:"Manali Snow Trail", loc:"Himachal Pradesh", price:"₹16,499", nights:"5 Nights / 6 Days", tags:["Hotels","Breakfast"], img:"images/manali.jpg", grad:"linear-gradient(160deg,#9fb8c9,#33506b)", tag:"Mountains"},
+    {id:7, name:"Andaman Island Escape", loc:"Andaman", price:"₹28,999", nights:"6 Nights / 7 Days", tags:["Hotels","Breakfast"], img:"images/andaman.jpg", grad:"linear-gradient(160deg,#3fc1c9,#0d5e66)", tag:"Islands"},
+    {id:8, name:"Udaipur Lakeside Tour", loc:"Rajasthan", price:"₹17,499", nights:"3 Nights / 4 Days", tags:["Hotels","Breakfast"], img:"images/udaipur.jpg", grad:"linear-gradient(160deg,#d9a441,#8a5b13)", tag:"Heritage"},
+    {id:9, name:"Munnar Hills Retreat", loc:"Kerala", price:"₹14,499", nights:"4 Nights / 5 Days", tags:["Hotels","Breakfast"], img:"images/munnar.jpg", grad:"linear-gradient(160deg,#4c8c5e,#123a22)", tag:"Backwaters"},
+    {id:10,name:"Bali Island Getaway", loc:"Bali", price:"₹39,999", nights:"6 Nights / 7 Days", tags:["Hotels","Breakfast"], img:"images/bali.jpg", grad:"linear-gradient(160deg,#59b7d1,#1c4c66)", tag:"Islands"},
   ];
 
   function pkgCard(p){
+    const bg = p.img ? `background-image:url('${p.img}'); background-size:cover; background-position:center;` : `background:${p.grad};`;
     return `<div class="pkg-card">
-      <div class="pkg-photo" style="background:${p.grad};">
+      <div class="pkg-photo" style="${bg}">
         <span class="pkg-price">${p.price}</span>
       </div>
       <div class="pkg-body">
@@ -992,18 +994,19 @@
 
   // ---------- Gallery data ----------
   const galleryItems = [
-    {title:"Kerala Backwaters", cat:"Backwaters", grad:"linear-gradient(160deg,#2f5d4a,#0f2a20)", cls:"wide", desc:"A houseboat drifting through the palm-lined canals of Alleppey."},
-    {title:"Himalayan Peaks", cat:"Mountains", grad:"linear-gradient(160deg,#7fb0c8,#2b4a5e)", cls:"tall", desc:"Snow-dusted ridgelines along the Manali–Rohtang route."},
-    {title:"Goa Coastline", cat:"Beaches", grad:"linear-gradient(160deg,#5fc7c2,#136b73)", cls:"", desc:"Golden hour along Goa's quieter southern beaches."},
-    {title:"Rajasthan Fort", cat:"Heritage", grad:"linear-gradient(160deg,#c9982f,#7a4a12)", cls:"", desc:"Sandstone ramparts of a centuries-old Rajasthani fort."},
-    {title:"Maldives Overwater Villas", cat:"Islands", grad:"linear-gradient(160deg,#4fd1e0,#0f6e8c)", cls:"wide", desc:"Turquoise lagoons framing private overwater stays."},
-    {title:"Munnar Tea Gardens", cat:"Backwaters", grad:"linear-gradient(160deg,#4c8c5e,#123a22)", cls:"", desc:"Rolling green tea estates across the Western Ghats."},
-    {title:"Udaipur Lake Palace", cat:"Heritage", grad:"linear-gradient(160deg,#d9a441,#8a5b13)", cls:"tall", desc:"The City of Lakes at dusk, seen from a rooftop café."},
-    {title:"Andaman Reef", cat:"Islands", grad:"linear-gradient(160deg,#3fc1c9,#0d5e66)", cls:"", desc:"Clear waters and coral reefs off Havelock Island."},
-    {title:"Snow Valley Drive", cat:"Mountains", grad:"linear-gradient(160deg,#9fb8c9,#33506b)", cls:"", desc:"A winding mountain road through fresh snowfall."},
+    {title:"Kerala Backwaters", cat:"Backwaters", img:"images/gal-kerala.jpg", grad:"linear-gradient(160deg,#2f5d4a,#0f2a20)", cls:"wide", desc:"A houseboat drifting through the palm-lined canals of Alleppey."},
+    {title:"Himalayan Peaks", cat:"Mountains", img:"images/gal-himachal.jpg", grad:"linear-gradient(160deg,#7fb0c8,#2b4a5e)", cls:"tall", desc:"Snow-dusted ridgelines along the Manali–Rohtang route."},
+    {title:"Goa Coastline", cat:"Beaches", img:"images/gal-goa.jpg", grad:"linear-gradient(160deg,#5fc7c2,#136b73)", cls:"", desc:"Golden hour along Goa's quieter southern beaches."},
+    {title:"Rajasthan Fort", cat:"Heritage", img:"images/gal-rajasthan.jpg", grad:"linear-gradient(160deg,#c9982f,#7a4a12)", cls:"", desc:"Sandstone ramparts of a centuries-old Rajasthani fort."},
+    {title:"Maldives Overwater Villas", cat:"Islands", img:"images/gal-maldives.jpg", grad:"linear-gradient(160deg,#4fd1e0,#0f6e8c)", cls:"wide", desc:"Turquoise lagoons framing private overwater stays."},
+    {title:"Munnar Tea Gardens", cat:"Backwaters", img:"images/gal-munnar.jpg", grad:"linear-gradient(160deg,#4c8c5e,#123a22)", cls:"", desc:"Rolling green tea estates across the Western Ghats."},
+    {title:"Udaipur Lake Palace", cat:"Heritage", img:"images/gal-udaipur.jpg", grad:"linear-gradient(160deg,#d9a441,#8a5b13)", cls:"tall", desc:"The City of Lakes at dusk, seen from a rooftop café."},
+    {title:"Andaman Reef", cat:"Islands", img:"images/gal-andaman.jpg", grad:"linear-gradient(160deg,#3fc1c9,#0d5e66)", cls:"", desc:"Clear waters and coral reefs off Havelock Island."},
+    {title:"Snow Valley Drive", cat:"Mountains", img:"images/gal-snow.jpg", grad:"linear-gradient(160deg,#9fb8c9,#33506b)", cls:"", desc:"A winding mountain road through fresh snowfall."},
   ];
   function galCard(g,i){
-    return `<div class="gal-item ${g.cls}" style="background:${g.grad};" data-cat="${g.cat}" onclick="openLightbox(${i})"><div class="cap">${g.title}</div></div>`;
+    const bg = g.img ? `background-image:url('${g.img}'); background-size:cover; background-position:center;` : `background:${g.grad};`;
+    return `<div class="gal-item ${g.cls}" style="${bg}" data-cat="${g.cat}" onclick="openLightbox(${i})"><div class="cap">${g.title}</div></div>`;
   }
   function renderGallery(cat){
     const filtered = cat==="All" ? galleryItems : galleryItems.filter(g=>g.cat===cat);
@@ -1022,7 +1025,14 @@
 
   function openLightbox(i){
     const g = galleryItems[i];
-    document.getElementById('lbPhoto').style.background = g.grad;
+    const lbPhoto = document.getElementById('lbPhoto');
+    if(g.img){
+      lbPhoto.style.backgroundImage = `url('${g.img}')`;
+      lbPhoto.style.backgroundSize = 'cover';
+      lbPhoto.style.backgroundPosition = 'center';
+    } else {
+      lbPhoto.style.background = g.grad;
+    }
     document.getElementById('lbTitle').textContent = g.title;
     document.getElementById('lbDesc').textContent = g.desc;
     document.getElementById('lightbox').classList.add('show');
